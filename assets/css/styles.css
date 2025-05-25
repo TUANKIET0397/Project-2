@@ -61,6 +61,21 @@ a {
     font-size: 3.8rem;
     line-height: 1.26;
 }
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp.line-2 {
+    --line-clamp: 2;
+}
+
+.break-all {
+    word-break: break-all;
+}
 /* ======= Header ======= */
 .header{
     background-color: #fffcf4;
@@ -349,6 +364,7 @@ a {
 }
 
 .popular .course-item .title a {
+    padding-right: 6px;
     color: #171100;
     font-size: 1.8rem;
     font-weight: 600;
@@ -387,4 +403,344 @@ a {
 .popular .course-item .book-btn:hover {
     background: var(--primary-color);
     color: #fff;
+}
+
+/* ======= feedback ======= */
+.feedback {
+    margin-top: 135px;
+    padding: 96px 0;
+    background: #2E2100;
+}
+
+.feedback-list {
+    display: flex;
+    overflow: hidden;
+}
+
+.feedback-item {
+    display: flex;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.feedback-item .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feedback-item .info .title {
+    margin-top: 18px;
+    color: #F7F7F7;
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.42;
+}
+
+.feedback-item .info  .desc {
+    margin-top: 4px;
+    color: #BFBCB2;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+
+.feedback-item .dots {
+    display: flex;
+    margin-top: 28px;
+}
+
+.feedback-item .dots .dot {
+    margin-right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #634700;
+    cursor: pointer;
+}
+
+.feedback-item .dots .dot.active {
+    background: #FFB900;
+    cursor: default;
+}
+
+.feedback-item .content {
+    width: 66%;
+    margin-left: auto;
+}
+
+.feedback-item blockquote {
+    margin-left: 30px;
+    color: #FFF;
+    font-size: 2.6rem;
+    font-style: italic;
+    line-height: 1.54;
+}
+
+/* ======= Features ======= */
+.features {
+    margin-top: 135px;
+    padding: 65px 0;
+}
+
+.features .body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.features .images {
+    display: flex;
+    gap: 0 30px;
+}
+
+.features .images img {
+    width: 270px;
+    height: 404px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.features img.lower {
+    margin-top: 34px;
+}
+
+.features .content {
+    width: 41%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.features .desc {
+    margin-top: 16px;
+    font-size: 1.6rem;
+    line-height: 1.75;
+    color: #5f5b53;
+}
+
+.features .content .cta-btn {
+    margin-top: 32px;
+    min-width: 137px;
+    color: #fff;
+    background: var(--primary-color);
+}
+
+.features-2nd {
+    margin-top: 70px;
+}
+
+.features-2nd .body {
+    flex-direction: row-reverse;
+}
+
+.features-2nd .content {
+    width: 49%;
+}
+
+.features-2nd .images img {
+    width: 470px;
+    height: 440px;
+}
+
+/* ======= Blog ======= */
+.blog {
+    margin-top: 135px;
+    padding: 96px 0;
+    background: #fffcf4;
+}
+
+.blog .blog-top {
+    text-align: center;
+}
+
+.blog .blog-top .desc {
+    margin: 16px auto 0;
+    width: 488px;
+    color: #696262;
+    font-size: 1.6rem;
+    line-height: 1.75;
+}
+
+.blog-list {
+    display: flex;
+    gap: 30px;
+    margin-top: 55px;
+    overflow: hidden; /* ẩn đi các item không nằm trong khung */
+}
+
+.blog .item {
+    flex-shrink: 0; /* thêm để các item không chiếm không gian của nhau, không bị nén lại*/
+    width: calc(33.33% - 20px);
+    border-radius: 16px;
+    background: #FFF;
+}
+
+.blog .item:hover {
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+}
+
+.blog .item .thumb {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.blog .item .info {
+    padding: 20px 20px 28px;
+}
+
+.blog .item .date {
+    position: relative;
+    /* display: flex; */
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 12px;
+    color: #5F5B53;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+
+.blog .item .date::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+.blog .item .date::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    display: inline-block;
+    /* width: 160px; */
+    right: -27px;
+    height: 1px;
+    background: #e2dfda;
+    border-radius: 0.5px;
+}
+
+.blog .item .title a {
+    display: inline-block;
+    margin: 12px 0;
+    color: #171100;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.75; /* 175% */
+}
+
+.blog .item .btn {
+    font-size: 1.4rem;;
+}
+
+.blog .item .btn:hover {
+    background: var(--primary-color);
+}
+
+.blog .dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 38px;
+}
+
+.blog .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5F5B53;
+    cursor: pointer;
+}
+
+.blog .dot.active {
+    background: var(--primary-color);
+    cursor: default;
+}
+
+/* ======= Footer ======= */
+.footer {
+    padding: 96px 135px 0;
+    background: #2E2100;
+}
+
+.footer .row {
+    display: flex;
+    padding-bottom: 38px;
+    border-bottom: 1px solid #59554B;
+}
+
+.footer .row .column {
+    width: 21.6%;
+}
+
+.footer .row .column:nth-child(1) {
+    width: 35%;
+}
+
+.footer .desc {
+    margin-top: 18px;
+    max-width: 267px;
+    color: #BFBCB2;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+
+.footer .socials {
+    display: flex;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.footer .socials .icon {
+    width: 15   px;
+    height: 15px;
+}
+
+.footer .title {
+    display: inline-block;
+    padding-bottom: 14px;
+    padding-right: 48px;
+    border-bottom: 1px solid #59554B;;
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.75; /* 175% */
+}
+
+.footer .list {
+    margin-top: 28px;
+}
+
+.footer .list a {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #BFBCB2;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+
+.footer .list li:last-child a {
+    margin-bottom: 0;
+}
+
+.footer .list strong {
+    font-weight: 600;
+    color: #FFF;
+}
+
+.footer .copyright {
+    padding: 28px 0;
+}
+
+.footer .copyright p {
+    color: #807D74;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.86;
 }
