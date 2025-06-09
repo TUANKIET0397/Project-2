@@ -4,7 +4,7 @@
 
 :root {
     --primary-color: #FFB900;
-    --font-heading: Sen, sans-serif;
+    --font-heading: 'Sen', sans-serif;
 }
 
 html {
